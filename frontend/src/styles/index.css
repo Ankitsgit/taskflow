@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink-bg: #f7f5f2;
+    --ink-surface: #ffffff;
+    --ink-border: #e5e0d8;
+    --ink-text: #1a1713;
+    --ink-muted: #7d6e5e;
+    --ink-accent: #1a1713;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--ink-bg);
+    color: var(--ink-text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  input, textarea, select {
+    outline: none;
+  }
+
+  ::selection {
+    background: #1a1713;
+    color: #f7f5f2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink-900 text-ink-50 font-display font-600 px-6 py-3 rounded-xl
+           hover:bg-ink-800 active:scale-[0.98] transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-ink-50 text-ink-800 font-body font-500 px-5 py-2.5 rounded-xl
+           border border-ink-200 hover:bg-ink-100 active:scale-[0.98]
+           transition-all duration-150;
+  }
+
+  .btn-ghost {
+    @apply text-ink-600 font-body font-500 px-4 py-2 rounded-lg
+           hover:bg-ink-100 active:scale-[0.98] transition-all duration-150;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-ink-200 rounded-xl px-4 py-3
+           text-ink-900 placeholder:text-ink-400 font-body
+           focus:border-ink-500 focus:ring-2 focus:ring-ink-200
+           transition-all duration-150;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-ink-100 shadow-card;
+  }
+
+  .tag-badge {
+    @apply inline-flex items-center text-xs font-mono px-2 py-0.5 rounded-md;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d0c9be;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b5a99a;
+}
+
+/* Animations */
+.animate-stagger > * {
+  animation: slideUp 0.4s ease-out both;
+}
+.animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.animate-stagger > *:nth-child(2) { animation-delay: 60ms; }
+.animate-stagger > *:nth-child(3) { animation-delay: 120ms; }
+.animate-stagger > *:nth-child(4) { animation-delay: 180ms; }
+.animate-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.animate-stagger > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Priority dot */
+.priority-high { @apply bg-red-100 text-red-700; }
+.priority-medium { @apply bg-amber-100 text-amber-700; }
+.priority-low { @apply bg-green-100 text-green-700; }
+
+.status-todo { @apply bg-ink-100 text-ink-600; }
+.status-in-progress { @apply bg-blue-100 text-blue-700; }
+.status-done { @apply bg-emerald-100 text-emerald-700; }
