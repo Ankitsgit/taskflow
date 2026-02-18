@@ -1,0 +1,28 @@
+PS C:\Users\Hp\Desktop\taskflow\taskflow\backend> npm run dev 2>&1 
+
+> taskflow-backend@1.0.0 dev
+> nodemon server.js
+
+[nodemon] 3.1.11
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node server.js`
+✅ MongoDB connected
+🚀 Server running on http://localhost:5000
+   Health: http://localhost:5000/api/health
+tee backend.log
+POST /api/auth/login 200 550.545 ms - 442
+GET /api/tasks?limit=5&sortBy=createdAt&order=desc 304 108.824 ms - -
+GET /api/tasks/stats 304 132.097 ms - -
+GET /api/tasks?limit=5&sortBy=createdAt&order=desc 304 14.499 ms - -
+GET /api/tasks/stats 304 11.401 ms - -
+GET /api/tasks?page=1&limit=20 304 15.595 ms - -
+POST /api/tasks 201 63.656 ms - 343
+PUT /api/users/profile 400 8.044 ms - 109
+PUT /api/users/profile 400 5.921 ms - 109
+PUT /api/users/profile 200 66.995 ms - 457
+GET /api/tasks/stats 200 51.045 ms - 55
+GET /api/tasks?limit=5&sortBy=createdAt&order=desc 200 57.850 ms - 374
+GET /api/tasks/stats 304 17.654 ms - -
+GET /api/tasks?limit=5&sortBy=createdAt&order=desc 304 21.699 ms - -
